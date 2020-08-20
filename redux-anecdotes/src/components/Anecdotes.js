@@ -15,7 +15,7 @@ const Anecdotes = (props) => {
     anecdotes : anecdotes.filter(anecdote => anecdote.content.toLowerCase().includes(filter.toLowerCase()))
     
     const vote = (anecdote) => {
-        dispatch(voteFor(anecdote.id))
+        dispatch(voteFor(anecdote))
         dispatch(voteNoti(anecdote.content))
         setTimeout(() => {
           dispatch(clearNoti())
