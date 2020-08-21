@@ -1,14 +1,13 @@
 import React, {useState} from 'react'
 import {useDispatch , useSelector} from 'react-redux'
 import {filterA} from '../reducers/filterReducer'
+import {connect} from 'react-redux'
 
 const Filter = (props) => {
-   const dispatch = useDispatch()
-
    const filterChange = e => {
        e.preventDefault()
        const filter = e.target.value
-       dispatch(filterA(filter))
+       props.filterA(filter)
 
    }
 
@@ -21,4 +20,6 @@ const Filter = (props) => {
    )
 }
 
-export default Filter
+
+
+export default connect(null, {filterA})(Filter)
